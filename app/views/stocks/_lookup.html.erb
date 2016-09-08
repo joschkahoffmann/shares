@@ -1,0 +1,12 @@
+<div id= "stock-lookup">
+	<h3>Search for Stocks</h3>
+	<div id= "stock-lookup-form">
+		<%= render 'stocks/lookup_form'%>
+	</div>
+
+	
+	<% if @stock%>
+		<%= render 'stocks/stock_lookup_results'%>
+	<%end%>
+</div>
+
