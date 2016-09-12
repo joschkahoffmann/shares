@@ -1,6 +1,7 @@
 class Stock < ActiveRecord::Base
 	has_many :user_stocks
 	has_many :users, through: :user_stocks
+
 	def self.find_by_ticker(ticker_symbol)
 		where(ticker: ticker_symbol).first
 	end
@@ -21,7 +22,7 @@ class Stock < ActiveRecord::Base
 			if closing_price
 				return  "#{closing_price}(Closing)"
 			elsif opening_price 
-				return "#{opening_price} (Opening)" if opening_price
+				return "#{opening_price} (Opening)"
 			else
 				return "unavailable."		
 			end
