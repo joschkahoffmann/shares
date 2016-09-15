@@ -1,0 +1,19 @@
+<div id= "friend-lookup">
+	<h3>Search for friends</h3>
+	<div id= "friend-lookup-form">
+		<%= render 'friends/lookup_form'%>
+	</div>
+
+	<%= render 'shared/spinner'%>
+	<div id= "friend-lookup-errors">
+	</div>
+	
+	<% if @users%>
+		<% if @users.size >0 %>
+			<%= render 'friends/friend_lookup_results'%>
+		<%else%>
+			<p class= "lead col-md-12"> No people matching your input have been found.</p>
+		<% end -%>
+	<%end%>
+</div>
+
