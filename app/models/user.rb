@@ -5,12 +5,14 @@ class User < ApplicationRecord
 
 	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  	
   	has_many :user_stocks
 	has_many :stocks, through: :user_stocks
-	has_many :friendships
+	has_many :friendships, dependent: :destroy
 	has_many :friends, through: :friendships
-
+	validates :first_name, presence: true
+	validates :last_name, presence: true
+	validates :email, presence: true, uniqueness: {case_sensitive: false}, length: {maximum: 150}
+	validates :password, presence: true
 
 	def can_add_stock?(ticker_symbol)
 		under_stock_limit? && !stock_already_added?(ticker_symbol)

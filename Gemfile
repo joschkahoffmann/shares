@@ -34,9 +34,14 @@ gem 'devise-bootstrap-views'
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer'
 gem 'stock_quote'
-group :development, :test do
+
+group :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'shoulda'
+  gem 'minitest'
+  gem 'test-unit'
+  gem 'capybara'
 end
 
 group :development do
