@@ -5,7 +5,8 @@ class UserLoginTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
   def setup
-  	@user= users(:michael)
+  	@user= Factory(:user)
+  	@user2= Factory(:user)
   end
   
   test "login_with correct information" do
@@ -17,5 +18,6 @@ class UserLoginTest < ActionDispatch::IntegrationTest
   	fill_in "Email", with: "blah"
   	fill_in "Password", with: ""
   	click_button "Sign in"
+  	assert_equal current_url, new_user_session_url
   end
 end

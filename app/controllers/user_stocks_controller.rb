@@ -10,6 +10,7 @@ class UserStocksController < ApplicationController
   # GET /user_stocks/1
   # GET /user_stocks/1.json
   def show
+    @user_stock= UserStock.find(params[:id])
   end
 
   # GET /user_stocks/new
@@ -33,6 +34,7 @@ class UserStocksController < ApplicationController
       else
         stock= Stock.new_from_lookup(params[:stock_ticker])
         if stock.save
+           stock.set_current_share_price!
           @user_stock=UserStock.new(user: current_user, stock: stock)
         else
           @user_stock=nil
@@ -83,6 +85,6 @@ class UserStocksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_stock_params
-      params.require(:user_stock).permit(:user_id, :stock_id)
+      params.require(:user_stock).permit(:stock_id)
     end
 end

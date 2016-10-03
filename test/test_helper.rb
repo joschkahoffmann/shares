@@ -20,4 +20,6 @@ class ActiveSupport::TestCase
   			click_button "Sign in"
   			assert_equal root_path(user), current_path
   		end
+
+  	
 end

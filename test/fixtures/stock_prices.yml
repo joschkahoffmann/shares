@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock: 
+  price: 9.99
+  timestamp: 2016-09-29 11:17:48
+
+two:
+  stock: 
+  price: 9.99
+  timestamp: 2016-09-29 11:17:48
