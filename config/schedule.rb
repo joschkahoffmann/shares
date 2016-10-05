@@ -5,12 +5,12 @@
 
 # Example:
 #
- set :output, "/log/cron_log.log"
+ #set :output, "/log/cron_log.log"
  set :environment, "development" 
  every 3.minutes do
 #   command "/usr/bin/some_great_command"
-   runner "StockPrice.create"
-#   rake "some:great:rake:task"
+#  runner "StockPrice.create"
+   rake "update:update_price"
  end
 #
 # every 4.days do

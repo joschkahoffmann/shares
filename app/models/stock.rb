@@ -33,7 +33,7 @@ class Stock < ActiveRecord::Base
 		self.update_attribute(:last_price, sp.price)
 	end
 
-
+	
 		#cache= Rails.cache
 
 		#closing_price = cache.read("stock_closing_#{id}") || cache.write("stock_closing_#{id}", 

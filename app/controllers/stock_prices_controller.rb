@@ -2,6 +2,10 @@ class StockPricesController < ApplicationController
 	
 	def show
 	end
+	def index
+		@stock= Stock.find(params[:stock_id])
+		@stock_prices=@stock.stock_prices
+	end
 
 	# def create
 	# 	@stock= Stock.find(params[:stock_id])

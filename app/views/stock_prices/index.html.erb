@@ -1,0 +1,6 @@
+<h1> Price Movements for <%= @stock.name%></h1> 
+	<% @stock_prices.each do |stock_price|%>
+		<%= time_ago_in_words(stock_price.created_at)%> ago
+		US$<%= stock_price.price%>
+		<br>
+	<% end%>
