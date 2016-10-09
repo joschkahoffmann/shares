@@ -4,7 +4,7 @@ class StockPricesController < ApplicationController
 	end
 	def index
 		@stock= Stock.find(params[:stock_id])
-		@stock_prices=@stock.stock_prices
+		@stock_prices=@stock.stock_prices.order(created_at: :desc).paginate(:page=> params[:page], :per_page=>10)
 	end
 
 	# def create

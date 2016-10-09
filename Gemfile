@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'twitter-bootstrap-rails'

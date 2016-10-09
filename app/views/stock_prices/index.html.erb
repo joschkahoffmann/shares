@@ -3,8 +3,17 @@
 	
 	<% options= {library: {pointSize:0, vAxis:{format: "currency"}, legend:{position:"left"}}, xtitle:"Date", ytitle: "Price in US$"}%>
 	<%=line_chart @stock_prices.pluck(:created_at, :price), options%> 
-	<% @stock_prices.each do |stock_price|%>
-		<%= time_ago_in_words(stock_price.created_at)%> ago
-		US$<%= stock_price.price%>
-		<br>
-	<% end%>
+	<table class= 'table table-striped'>
+		<thead>
+			
+			<th> Time of stockprice</th>
+			<th> Price</th>
+		</thead>
+		<tbody>
+			<% @stock_prices.each do |stock_price|%>
+				<tr><td><%= time_ago_in_words(stock_price.created_at)%> ago </td>
+				<td>US$<%= stock_price.price%></td></tr>
+			<% end%>
+		</tbody>
+	</table>
+				<%=will_paginate @stock_prices, renderer: BootstrapPagination::Rails%>
