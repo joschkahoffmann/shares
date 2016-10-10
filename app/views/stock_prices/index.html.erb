@@ -6,7 +6,7 @@
 	<table class= 'table table-striped'>
 		<thead>
 			
-			<th> Time of stockprice</th>
+			<th> Time of Update</th>
 			<th> Price</th>
 		</thead>
 		<tbody>
@@ -16,4 +16,6 @@
 			<% end%>
 		</tbody>
 	</table>
-				<%=will_paginate @stock_prices, renderer: BootstrapPagination::Rails%>
+	<%=will_paginate @stock_prices, renderer: BootstrapPagination::Rails%>
+	<br>
+<%= link_to "Back", my_portfolio_path, class: 'btn btn-primary'%>

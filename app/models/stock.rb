@@ -13,7 +13,7 @@ class Stock < ActiveRecord::Base
 		#cache= Rails.cache
 		looked_up_stock= StockQuote::Stock.quote(ticker_symbol)
 		#PriceService.outsource_this(ticker: looked_up_stock.symbol)
-		#return nil unless looked_up_stock.name
+		return nil unless looked_up_stock.name
 		@new_stock= new(ticker: looked_up_stock.symbol, 
 		 			name: looked_up_stock.name)
 		# closing_price = cache.read("stock_closing_#{id}")
@@ -24,7 +24,6 @@ class Stock < ActiveRecord::Base
 		# 	new_stock.update_attribute(:last_price, opening_price)
 		# end
 		#new_stock.last_price= new_stock.pric
-		@new_stock
 	end
 
 	def set_current_share_price!
