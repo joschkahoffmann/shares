@@ -1,1 +1,11 @@
-<%= link_to "logout", destroy_user_session_path, method: :delete %>
+<div class="center jumbotron">
+	<div class= 'welcome'>
+		<h1> Welcome to the Finance Tracker</h1>
+			<p class= "welcome-text"> This App  allows you to track up to ten stocks and monitor their shareprices. Stock prices are automatically updated every 3 minutes, so you are always up to date. Just build your portfolio to get started.
+			<br><br>
+				Alternatively, look up your friends and check out the stocks they are tracking. Enjoy! 
+			</p>
+		<%= link_to "My Portfolio", my_portfolio_path, class: 'btn btn-lg btn-primary'%>
+		<%= link_to "My Friends", my_friends_path, class:'btn btn-lg btn-default'%>
+	</div>
+</div>
